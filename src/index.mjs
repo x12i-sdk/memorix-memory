@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import { createInMemoryMemoryRunStore, cursorKeyFor } from '@x12i/memorix-memory';
+const store = createInMemoryMemoryRunStore();
+const identity = { sourceId: 'fixture-source', streamId: 'assets', objectType: 'asset', mode: 'knowledge' };
+const cursorKey = cursorKeyFor(identity);
+await store.setCursor({ ...identity, cursorKey, method: 'cursor', committedCursor: 'page-2', revision: 1, updatedAt: '2026-01-01T00:00:00Z', lastPullId: 'pull-1' });
+assert.equal((await store.getCursor(cursorKey)).committedCursor, 'page-2');
+const differentStream = cursorKeyFor({ ...identity, streamId: 'people' });
+assert.notEqual(differentStream, cursorKey);
+assert.equal(await store.getCursor(differentStream), null);
+assert.equal(await store.deleteCursor(cursorKey), true);
+console.log({ cursorKey, isolatedStream: differentStream });

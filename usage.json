@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "package": "@x12i/memorix-memory",
+  "packageVersion": "3.2.2",
+  "npmUrl": "https://www.npmjs.com/package/@x12i/memorix-memory",
+  "usageRepository": "https://github.com/x12i-sdk/memorix-memory",
+  "sourceRepository": "https://github.com/x12i/memorix-mono-repo",
+  "sourceCommit": "b87d277ff9c40cedc18d5f4775642baf8a2d3df1",
+  "sourcePackageDirectory": "memorix-memory",
+  "example": {
+    "title": "Save and reload an isolated stream checkpoint",
+    "entrypoint": "src/index.mjs",
+    "command": "npm start",
+    "requiresCredentials": false,
+    "validation": "passed",
+    "validatedAt": "2026-10-24T15:04:54.824492+00:00",
+    "isolatedInstallation": true,
+    "sourceSha256": "f5fae4930c367859c08463036f775b9f425eae2894f4bfc033d9b87c0e73bb39",
+    "manifestSha256": "a3a32de98a25a344862a372a1eb93efe939cbd840498a8468247732815a5d382"
+  },
+  "validationFiles": {
+    "src/index.mjs": "f5fae4930c367859c08463036f775b9f425eae2894f4bfc033d9b87c0e73bb39"
+  }
+}
